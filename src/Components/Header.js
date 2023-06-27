@@ -1,6 +1,6 @@
 import React from "react";
 
-const Main = () => {
+const Header = () => {
   return (
     <>
       <div className="header">
@@ -8,8 +8,9 @@ const Main = () => {
           <h1>Girlfailure' Books</h1>
         </div>
         <div className="rowTwo">
+          <h3>Find Your Book</h3>
           <div className="searchBar">
-            <inpute type="text" placeholder="Enter Book Name" />
+            <input type="text" placeholder="Enter Book Name" />
             <button>Search</button>
           </div>
         </div>
@@ -18,4 +19,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Header;
