@@ -1,15 +1,31 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({ book }) => {
+  console.log(book);
+
   return (
     <>
-      <div className="card">
-        <img src="" alt="" />
-        <div className="book-details">
-          <h3 className="title">Hi</h3>
-          <p className="cost">21</p>
-        </div>
-      </div>
+      {book.map((item) => {
+        var thumbnail =
+          item.volumeInfo.imageLinks &&
+          item.volumeInfo.imageLinks.smallThumbnail;
+        var bookCost =
+          item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
+
+        if (thumbnail !== undefined && bookCost !== undefined) {
+          return (
+            <>
+              <div className="card">
+                <img src={thumbnail} alt="" />
+                <div className="book-details">
+                  <h3 className="title">{item.volumeInfo.title}</h3>
+                  <p className="cost">{bookCost}</p>
+                </div>
+              </div>
+            </>
+          );
+        }
+      })}
     </>
   );
 };

@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import Card from "./Card";
+import axios from "axios";
 
 const Header = () => {
+  const [search, setSearch] = useState("");
+  const [bookData, setData] = useState([]);
+
+  const apiKey = "AIzaSyBMenjP3EOtqxEsc8bPpk3ox1lKAl6Simo";
+
+  const searchBook = (evt) => {
+    if (evt.key === "Enter") {
+      axios
+        .get(
+          `https://www.googleapis.com/books/v1/volumes?q='+search+'&key=${apiKey}`+'&maxResults=20'
+        )
+        .then((res) => setData(res.data.items))
+        .catch((err) => console.log(err));
+    }
+  };
+
   return (
     <>
       <div className="header">
@@ -10,10 +28,19 @@ const Header = () => {
         <div className="rowTwo">
           <h3>Find Your Book</h3>
           <div className="searchBar">
-            <input type="text" placeholder="Enter Book Name" />
+            <input
+              type="text"
+              placeholder="Enter Book Name"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyUp={searchBook}
+            />
             <button>Search</button>
           </div>
         </div>
+      </div>
+      <div className="body-page">
+        <div className="container">{<Card book={bookData} />}</div>
       </div>
     </>
   );
