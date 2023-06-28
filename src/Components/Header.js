@@ -6,13 +6,13 @@ const Header = () => {
   const [search, setSearch] = useState("");
   const [bookData, setData] = useState([]);
 
-  const apiKey = "AIzaSyBMenjP3EOtqxEsc8bPpk3ox1lKAl6Simo";
-
   const searchBook = (evt) => {
     if (evt.key === "Enter") {
       axios
         .get(
-          `https://www.googleapis.com/books/v1/volumes?q='+search+'&key=${apiKey}` +
+          "https://www.googleapis.com/books/v1/volumes?q=" +
+            search +
+            "&key=AIzaSyBMenjP3EOtqxEsc8bPpk3ox1lKAl6Simo" +
             "&maxResults=20"
         )
         .then((res) => setData(res.data.items))
