@@ -12,7 +12,8 @@ const Header = () => {
     if (evt.key === "Enter") {
       axios
         .get(
-          `https://www.googleapis.com/books/v1/volumes?q='+search+'&key=${apiKey}`+'&maxResults=20'
+          `https://www.googleapis.com/books/v1/volumes?q='+search+'&key=${apiKey}` +
+            "&maxResults=20"
         )
         .then((res) => setData(res.data.items))
         .catch((err) => console.log(err));
@@ -23,10 +24,12 @@ const Header = () => {
     <>
       <div className="header">
         <div className="rowOne">
-          <h1>Girlfailure' Books</h1>
+          <a className="home-btn" href="/">
+            <h1 className="app-title">Girlfailure' Books</h1>
+          </a>
         </div>
         <div className="rowTwo">
-          <h3>Find Your Book</h3>
+          <h3 className="search-book-title">Find Your Book</h3>
           <div className="searchBar">
             <input
               type="text"
@@ -34,8 +37,9 @@ const Header = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyUp={searchBook}
+              className="search-bar-book"
             />
-            <button>Search</button>
+            <button className="search-btn-book">Search</button>
           </div>
         </div>
       </div>

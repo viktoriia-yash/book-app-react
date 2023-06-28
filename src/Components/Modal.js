@@ -10,8 +10,8 @@ const Modal = ({ show, item, onClose }) => {
     <>
       <div className="overlay">
         <div className="overlay-inner">
-          <button className="Close" onClick={onClose}>
-            X
+          <button className="close-btn" onClick={onClose}>
+            x
           </button>
           <div className="inner-box">
             <img src={thumbnail} alt="" />
@@ -22,8 +22,12 @@ const Modal = ({ show, item, onClose }) => {
                 {item.volumeInfo.publisher}{" "}
                 <span>{item.volumeInfo.publisherDate}</span>
               </h4>
-              <a href={item.volumeInfo.previewLink}>
-                <button className="more-btn">More</button>
+              <a
+                href={item.volumeInfo.previewLink}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <button className="book-preview-btn">More</button>
               </a>
             </div>
           </div>
