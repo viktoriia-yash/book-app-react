@@ -28,7 +28,7 @@ const Card = ({ book }) => {
                 <img src={thumbnail} alt="" />
                 <div className="book-details">
                   <h3 className="title">{item.volumeInfo.title}</h3>
-                  <p className="cost">{bookCost}</p>
+                  <p className="cost">{bookCost} UAH</p>
                 </div>
               </div>
               <Modal
