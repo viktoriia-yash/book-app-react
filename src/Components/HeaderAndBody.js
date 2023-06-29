@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import axios from "axios";
 
-const Header = () => {
+const HeaderAndBody = () => {
   const [search, setSearch] = useState("");
   const [bookData, setData] = useState([]);
 
@@ -50,4 +50,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderAndBody;
