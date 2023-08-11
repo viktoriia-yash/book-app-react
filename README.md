@@ -5,7 +5,7 @@ This is my first project in this marathon - Book Application.
 <br />
 ### Technology & Resources Used:
 1. React, HTML5, and CSS3
-2. Google Books API from <a href="https://openweathermap.org/">Google for Developers</a>
+2. Google Books API from <a href="https://developers.google.com/">Google for Developers</a>
 3. Vercel for hosting
 4. Google Fonts and Google Icons
 ### Main Links:
